@@ -1,0 +1,20 @@
+a(href="/") Home
+body
+  title Create a new profile 
+  br
+  h3 Please Enter the following information below to create an account:
+  - if(errormessage) 
+        h3 #{errormessage}
+  form(action='/registration', method='POST')
+    p
+      |     Username: 
+      input#username(type='text' , name='username', value=" ")
+      br
+      |     Password: 
+      input#password(type='text' , name ="password", value="")
+      br
+      |         
+      br
+      button#register(type='submit' value='register') register
+
+      

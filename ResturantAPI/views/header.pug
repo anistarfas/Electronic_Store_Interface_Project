@@ -1,0 +1,26 @@
+div#main
+a(href="/")  Home
+|
+|
+a(href="/users")    Users information 
+|
+|
+- if(checkOBJ.loggedIn)
+    |
+    |
+    a(href="/orderform")    Resturant Menu Page
+    |
+    |
+    a(href="/logout")    Logout
+    |
+    |
+    a(href="/profile")    My Profile
+
+- else
+    |
+    |
+    a(href="/login")    Login
+    |
+    |
+    a(href="/registration")    Registration
+

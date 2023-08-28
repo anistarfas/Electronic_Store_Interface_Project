@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+    head
+        
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title users
+    body 
+        
+        include ./header
+        h2 Order summary:
+        h3 Username:
+        p= profile.username
+
+        h3 Restaurant ID:
+        p=order.restaurantID
+
+        h3 Restaurant Name:
+        p= order.restaurantName
+
+        h3 Subtotal:
+        p= order.subtotal
+
+        h3 Total:
+        p= order.total
+
+        h3 Fee:
+        p= order.fee
+
+        h3 Tax:
+        p= order.tax
+
+        each order in orders
+            if(order.name)
+                h3 item name: 
+                p=order.name
+                h3 amount: 
+                p=order.quantity 
+            
+
+        
+
+
+
+        

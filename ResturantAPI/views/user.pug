@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title users
+    body 
+        
+        include ./header
+        div
+            if(profile._id.toString() == checkOBJ.userId && checkOBJ.loggedIn)
+                form(action='/users/'+profile._id, method='POST')
+                    
+                    input(type='radio' name='drone' value='private' class="name")
+                    label(for='private' ) private
+                    br
+                    input(type='radio' name='drone' value='public' class="name")
+                    label(for='public' ) public 
+                    br
+                    button#save(type='submit ' value='public')
+                        | save
+                    br
+
+        h2 Username:
+        
+        p=profile.username
+        h2 Order History: 
+        each order in profile.orders 
+                br
+                a(href=`/orders/${order}`) #{order}
+        
